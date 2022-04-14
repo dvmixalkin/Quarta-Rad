@@ -1,0 +1,6 @@
+opencv-python
+torch
+torchvision
+pandas
+openpyxl
+scikit-learn
