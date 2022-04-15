@@ -74,6 +74,9 @@ if __name__ == '__main__':
             loss.backward()
             optimizer.step()
 
+        if not os.path.exists('./checkpoints'):
+            os.mkdir('./checkpoints')
+
         torch.save(model.state_dict(), f'./checkpoints/Resnet{net_size}_{opt}_Epoch_{epoch}.pth')
         print(f'[+] Trained weights saved to ./checkpoints/Resnet{net_size}_{opt}_Epoch_{epoch}.pth')
 
@@ -81,5 +84,3 @@ if __name__ == '__main__':
             learning_rate *= weight_decay_coefficient
             for g in optimizer.param_groups:
                 g['lr'] = g['lr'] * weight_decay_coefficient
-
-    print('Success!')
