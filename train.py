@@ -3,7 +3,6 @@ import os.path
 import dataset as ds
 import torch
 import torchvision
-import sklearn
 
 if __name__ == '__main__':
 
